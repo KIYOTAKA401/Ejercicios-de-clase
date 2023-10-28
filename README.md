@@ -467,15 +467,207 @@ setup_string = "from math import factorial"
 from timeit import timeit
 timeit("factorial(4)", setup=setup_string, number=10_000_000)
 ```
+def suma(a, b):
+    return a + b
 
+def resta(a,b):
+    return a - b
+
+def multiplicacion(a, b):
+    return a * b
+
+def division(a, b):
+    if b == 0:
+        raise ZeroDivisionError("division by zero")
+    return float(a / b)
+
+def cuadrado (a):
+    return a ** 2  
+
+#import calculadoraa.calculos as calc
+
+#print(calc.suma(2, 3))
+
+#______________________________________________________
+
+#from calculadoraa import calculos
+
+#print(calculos.suma(2, 3))
+#print(calculos.resta(2, 3))
+#print(calculos.multiplicacion(2, 3))
+#print(calculos.division(2, 3))
+#print(calculos.cuadrado(2))
+
+#________________________________________________________
+
+#from calculadoraa.calculos import *
+#print(suma(2, 3))
+#print(resta(2, 3))
+
+
+#from calculadoraa.calculos import suma, resta
+#print(suma(2, 3))
+#print(resta(2, 3))
+
+#print(multiplicacion(2, 3))
+
+#___________________________________________________________
+
+#from calculadoraa.calculos import suma as s
+#from calculadoraa.calculos import resta as restar
+
+#alias aka=as know as
+
+#print(s(2, 3))
+#print(restar(2, 3))
+
+
+#______________________________________________________________
+
+from calculadoraa.calculos import suma as sumar, resta as restar
+
+print(sumar(2, 3))
+print(restar(2, 3))
+
+Estas son distintas maneras de hacer operaciones importando desdes otra carpeta
 ```
+from guizero import App, Text, PushButton, TextBox
 
+def saluda_me():
+    App.info("saludo", text= f"Hola {name.value}")
+App=App(title="COTE App")
+
+
+message=Text(App,text="¿Cual es tu nombre?", color="red")
+name=TextBox(App, width=25, height=1, multiline=True) 
+message_2 = Text(App)
+
+
+boton=PushButton(App,text="puchame",command=saluda_me)
+
+
+App.display()
+
+Esta es una forma de agregar palabras despues de algo ya escrito en guizero
 ```
+### USO DE DOCSTRINGS PARA DOCUMENTAR FUNCIONES
+def suma(a, b):
+    """
+    This function adds two numbers.
 
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The sum of a and b.
+    """
+    return a + b
+
+def resta(a, b):
+    """
+    This function subtracts two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The difference between a and b.
+    """
+    return a - b
+
+def multiplicacion(a, b):
+    """
+    This function multiplies two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The product of a and b.
+    """
+    return a * b
+
+def division(a, b):
+    """
+    This function divides two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    float: The quotient of a and b.
+    """
+    return a / b
+
+    print(suma.__doc__)
 ```
+def suma(a, b):
+    """
+    This function adds two numbers.
 
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The sum of a and b.
+    """
+    # Check if both a and b are integers
+    if not isinstance(a, int) or not isinstance(b, int):
+        print("Both a and b should be integers.")
+        return None
+    
+    # Add a and b
+    result = a + b
+    
+    # Print the result
+    print(f"The sum of {a} and {b} is {result}.")
+    
+    return result
+print(suma(1.0,5))
 ```
+### CREACION DE MODULOS CON FUNCIONES, IMPORTACION DE FUNCIONES DESDE MODULOS, PRUBEAS Y DEPURACION
+#import unittest
 
+
+def suma(a, b):
+    """
+    This function adds two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The sum of a and b.
+    """
+    return a + b
+
+def resta(a, b):
+    """
+    This function subtracts two numbers.
+
+    Parameters:
+    a (int): The first number.
+    b (int): The second number.
+
+    Returns:
+    int: The difference between a and b.
+    """
+    return a - b
+
+assert suma(2, 3) == 5.0, "debería ser 5"
+assert suma(-2, 3) == 1, "debería ser 1"
+assert suma(0, 0) == 0, "debería ser 0"
+assert suma(-3,-3) == -6, "debería ser -6"
+    
+assert resta(2, 3) == -1, "debería ser -1"
+assert resta(-2, 3) == -5, "debería ser -5"
+assert resta(0, 0) == 0, "debería ser 0"
 ```
 
 ```
