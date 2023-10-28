@@ -668,32 +668,3 @@ assert suma(-3,-3) == -6, "debería ser -6"
 assert resta(2, 3) == -1, "debería ser -1"
 assert resta(-2, 3) == -5, "debería ser -5"
 assert resta(0, 0) == 0, "debería ser 0"
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
