@@ -238,3 +238,270 @@ app.display()
 
 # La aplicación permanecerá abierta y esperando eventos (por ejemplo, clics en botones) hasta que se cierre.
 ```
+
+# Definir la función double
+def double(x:int)->int:
+    return x * 2
+
+# Asignar la función double a la variable my_double
+my_double = double
+print(type(my_double))
+
+# Llamar a la función a través de la variable
+result = my_double(5)
+
+# Imprimir el resultado
+print(result)
+```
+def double(x:int)->int:
+    return x * 2
+
+# Llamar a la función a través de la variable
+doble = double(3)
+
+def cuad(f):
+    return f ** 2
+
+cuadrado = cuad(doble)
+print(cuadrado)
+```
+def cuad(n:int)->int:
+    return n ** 2
+
+
+def elevar_numeros(lista, cuad):
+    lista_cuadrados = []
+    for num in lista:
+        lista_cuadrados.append(cuad(num))
+    return lista_cuadrados
+
+
+lista = [1, 2, 3, 4, 5]
+print(elevar_numeros(lista, cuad))
+```
+def cuad(n:int)->int:
+    return n ** 2
+
+
+def elevar_numeros(lista):
+    lista_cuadrados = []
+    for num in lista:
+        lista_cuadrados.append(cuad(num))
+    return lista_cuadrados
+
+
+lista = [1, 2, 3, 4, 5]
+print(elevar_numeros(lista))
+```
+def elevar_numeros(lista):
+    lista_cuadrados = []
+    for num in lista:
+        lista_cuadrados.append((lambda x: x **2)(num))
+    return lista_cuadrados
+
+
+lista = [1, 2, 3, 4, 5]
+print(elevar_numeros(lista))
+```
+def potencia(x,y): #pow(x,y)
+    for _ in range(y):
+        x = x * y
+    return x
+
+
+def elevar_numeros(lista, y):
+    lista_potencias = []
+    for num in lista:
+        lista_potencias.append(pow(num,y))
+    return lista_potencias
+
+
+lista = [1, 2, 3, 4, 5]
+print(elevar_numeros(lista, 2))
+```
+def identity(x):
+    return x
+
+print(identity(3))
+```
+lambda x: x
+#print((lambda x: x*2)(5))
+y = lambda x: x
+y(5)
+```
+cuadrado = lambda x: x+1
+cuadrado(3)
+```
+lambda x: x + 1
+```
+(lambda x: x + 1)(2)
+```
+# puede ser nombrada
+add_one = lambda x: x + 1
+add_one(2)
+```
+def add_one(x):
+    return x + 1
+```
+(lambda x,y: x/y)(10,y=1)
+
+def division(x,y=1):
+    return x/y
+ 
+ 
+division(5)   
+```
+def f():           #inicializacion,condicion y incremento
+    x = 10
+    f()
+```
+# Para conocer el límite de recursión
+import sys
+print(sys.getrecursionlimit())
+```
+from sys import getrecursionlimit
+print(getrecursionlimit())
+```
+# Se puede modificar el límite de recursión
+sys.setrecursionlimit(5000)
+```
+# cuenta regresiva no recursiva (iterativa)
+def cuenta_regresiva(n):
+    while n >= 0:
+        print(n)
+        n -= 1
+
+cuenta_regresiva(5)
+```
+# cuenta regresiva recursiva
+def cuenta_regresiva(n):
+    print(n)
+    if n == 0:
+        return                      # Fin de la recursión, caso base
+    else:
+        cuenta_regresiva(n - 1)     # Llamada recursiva
+
+
+cuenta_regresiva(5)
+```
+# Función factorial no recursiva (iterativa)
+def factorial(n):
+    result = 1
+    for i in range(1, n+1):
+        result *= i
+    return result
+```
+# función factorial recursiva
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))
+```
+def factorial(n):
+    return 1 if n <= 1 else n * factorial(n - 1)
+
+
+print(factorial(5))
+```
+def factorial(n):
+    print(f"factorial() llamado con n = {n}")
+    return_value = 1 if n <= 1 else n * factorial(n -1)
+    print(f"-> factorial({n}) retorna {return_value}")
+    return return_value
+
+
+factorial(5)
+```
+# Ejemplo iterativo
+from timeit import timeit
+
+timeit("print(string)", setup="string='Hola Mundo'", number=100)
+```
+# Performance algoritmo factorial iterativo
+from timeit import timeit
+
+setup_string = """
+print("Iterativo:")
+def factorial(n):
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+"""
+
+from timeit import timeit
+timeit("factorial(4)", setup=setup_string, number=10000000)
+```
+# Performance algoritmo factorial recursivo
+from timeit import timeit
+
+setup_string = """
+print("Recursive:")
+def factorial(n):
+    return 1 if n <= 1 else n * factorial(n - 1)
+"""
+
+from timeit import timeit
+timeit("factorial(4)", setup=setup_string, number=10_000_000)
+```
+#Usando reduce
+setup_string = """
+from functools import reduce
+print("reduce():")
+def factorial(n):
+    return reduce(lambda x, y: x * y, range(1, n + 1) or [1])
+"""
+
+from timeit import timeit
+timeit("factorial(4)", setup=setup_string, number=10000000)
+```
+# Python ya tiene una función factorial
+from math import factorial
+factorial(4)
+```
+setup_string = "from math import factorial"
+
+from timeit import timeit
+timeit("factorial(4)", setup=setup_string, number=10_000_000)
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
